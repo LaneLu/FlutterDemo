@@ -168,7 +168,6 @@
 //   }
 //
 // }
-
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -177,23 +176,40 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Text Widget",
+      title: "ListView Widget",
       home: Scaffold(
-        body: Center(
-          child: Text(
-            "昨夜雨疏风骤，浓睡不消残酒。试问卷帘人，却道海棠依旧。知否，知否？应是绿肥红瘦。",
-            textAlign: TextAlign.start, //设置文字对齐方式
-            maxLines: 1, //最大行数
-            overflow: TextOverflow.ellipsis, //省略号
-            style: TextStyle(
-              fontSize: 25.0, //设置文字大小
-              color: Colors.redAccent, //设置文字颜色
-              decoration: TextDecoration.underline, //设置下划线
-              decorationStyle: TextDecorationStyle.solid,//设置下划线为实线
-            ),
+          appBar: AppBar(
+            title: Text("ListView组件练习"),
           ),
-        ),
-      ),
+          body: ListView(
+            children: <Widget>[
+              // ListTile(
+              //   leading: Icon(Icons.ac_unit),
+              //   title: Text("ac_unit"),
+              // ),
+              // ListTile(
+              //   leading: Icon(Icons.access_alarm),
+              //   title: Text("access_alarm"),
+              // ),
+              // ListTile(
+              //   leading: Icon(Icons.add_a_photo),
+              //   title: Text("add_a_photo"),
+              // ),
+              // ListTile(
+              //   leading: Icon(Icons.add_alarm),
+              //   title: Text("add_alarm"),
+              // ),
+              Image.network(
+                  "https://uploadzpbz.wujinjin.com/index/f5c9d06b4c68d7bd26c955da1698c5ba.jpg"),
+              Image.network(
+                  "https://uploadzpbz.wujinjin.com/index/c8939c5d21ef5b90dfae55ac336b2e10.jpg"),
+              Image.network(
+                  "https://uploadzpbz.wujinjin.com/index/e48df0d17910ecc06935244657c4859b.jpg"),
+              Image.network(
+                  "https://uploadzpbz.wujinjin.com/index/f0e071ef1079522fb655061d7a697ded.jpg"),
+            ],
+            padding: EdgeInsets.all(10.0),
+          )),
     );
   }
 }
